@@ -48,9 +48,8 @@ int shell(){
 			}
 			break;
 		case 'i':
-			ret = scanf("%lu", &k);
 			memset(v, 0, sizeof(v));
-			sprintf(v, "%ld", k);
+			ret = scanf("%lu %s", &k, v);
 			UNUSED(ret);
 			if (insert(table_id, k, v) != 0){
 				printf("Insert Failed\n");
