@@ -41,7 +41,7 @@ int shell(){
 	while (scanf("%c", &instruction) != EOF) {
 		switch (instruction) {
 		case 'd':
-			ret = scanf("%lu", &k);
+			ret = scanf("%ld", &k);
 			UNUSED(ret);
 			if (delete(table_id, k) != 0){
 				printf("Delete Failed\n");
@@ -49,19 +49,19 @@ int shell(){
 			break;
 		case 'i':
 			memset(v, 0, sizeof(v));
-			ret = scanf("%lu %s", &k, v);
+			ret = scanf("%ld %s", &k, v);
 			UNUSED(ret);
 			if (insert(table_id, k, v) != 0){
 				printf("Insert Failed\n");
 			}
 			break;
 		case 'f':
-			ret = scanf("%lu", &k);
+			ret = scanf("%ld", &k);
 			UNUSED(ret);
 			if ((find_ret = find(table_id, k)) == NULL){
 				printf("Not found\n");
 			} else{
-				printf("%lu %s\n", k, find_ret);
+				printf("%ld %s\n", k, find_ret);
 				free(find_ret);
 			}
 			break;
