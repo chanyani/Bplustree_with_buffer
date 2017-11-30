@@ -220,7 +220,7 @@ int redistribute_nodes(table *t, npage *np, npage *neighbor, int neighbor_index,
 			B(parent)->i_children[k_prime_index].k = 
 				B(neighbor)->i_children[B(neighbor)->num_keys - 1].k;
 
-			memset(&B(neighbor)->i_children[B(neighbor)->num_keys], 0, sizeof(child));
+			memset(&B(neighbor)->i_children[B(neighbor)->num_keys - 1], 0, sizeof(child));
 		}
 		else {
 			nb->l_recs[0] = B(neighbor)->l_recs[B(neighbor)->num_keys - 1];
